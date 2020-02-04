@@ -54,6 +54,19 @@ enum
 
 typedef int func_heob_control( int );
 
+// You can call this function inside your code.
+// Example:
+// void foo() {
+//     ...
+//     heob_control( HEOB_LEAK_RECORDING_START );
+//     ...
+//     heob_control( HEOB_LEAK_RECORDING_CLEAR );
+//     ...
+//     heob_control( HEOB_LEAK_RECORDING_STOP );
+//     ...
+//     heob_control( HEOB_LEAK_RECORDING_SHOW );
+//     ...
+// }
 static inline int heob_control( int cmd )
 {
   HMODULE heob = GetModuleHandleA( "heob" HEOB_BITS ".exe" );
